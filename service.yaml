@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-app-service  # Nom du service
+  namespace: dev  # Namespace où le service sera créé
+spec:
+  selector:
+    app: dev-app  # Le service va sélectionner les pods avec ce label
+  ports:
+    - protocol: TCP
+      port: 80   # Le port externe accessible
+      targetPort: 8888  # Le port interne du conteneur
+  type: NodePort  # Type du service, ici NodePort pour exposer le service à l'extérieur
