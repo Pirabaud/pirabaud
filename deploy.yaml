@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: playground  # Nom du conteneur
-          image: wil42/playground:v2 # Ton image Docker (remplace `my-image` par le nom réel de ton image)
+          image: wil42/playground:v1 # Ton image Docker (remplace `my-image` par le nom réel de ton image)
           ports:
             - containerPort: 8888 
