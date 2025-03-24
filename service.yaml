@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: playground-service  # Nom du service
+  name: will-playground  # Nom du service
   namespace: dev  # Namespace où le service sera créé
 spec:
   selector:
-    app: pod-playground  # Sélection des Pods avec le label "app: pod-playground"
+    app: will-playground # Sélection des Pods avec le label "app: pod-playground"
   ports:
     - protocol: TCP
       port: 80  # Le port sur lequel ton Service sera exposé

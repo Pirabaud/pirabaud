@@ -7,14 +7,14 @@ spec:
   replicas: 1  # Nombre de réplicas du pod que tu veux avoir
   selector:
     matchLabels:
-      app: pod-playground  # Sélecteur pour identifier le pod
+      app: wil-playground  # Sélecteur pour identifier le pod
   template:
     metadata:
       labels:
-        app: pod-playground  # Label pour les pods créés par ce déploiement
+        app: wil-playground  # Label pour les pods créés par ce déploiement
     spec:
       containers:
         - name: playground  # Nom du conteneur
-          image: wil42/playground:v2 # Ton image Docker (remplace `my-image` par le nom réel de ton image)
+          image: wil42/playground:v1 # Ton image Docker (remplace `my-image` par le nom réel de ton image)
           ports:
             - containerPort: 8888 
