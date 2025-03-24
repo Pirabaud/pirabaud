@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: playground-deployment  # Nom du déploiement
+  name: will-playground  # Nom du déploiement
   namespace: dev  # Namespace où le déploiement sera créé
 spec:
   replicas: 1  # Nombre de réplicas du pod que tu veux avoir
