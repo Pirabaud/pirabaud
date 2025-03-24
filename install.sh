@@ -51,11 +51,12 @@ kubectl config set-context --current --namespace=dev  # 🔄 Changement de names
 
 # 1️⃣3️⃣ Attente que le pod soit dans le statut Running avant de continuer
 echo "⏳ Attente que le pod soit Running..."
+kubectl get pods -n dev --show-labels
+kubectl wait --for=condition=created pod -n dev -l app=will-playground --timeout=300s
 kubectl wait --for=condition=ready pod -n dev -l app=will-playground --timeout=300s
 
 # 1️⃣4️⃣ Récupérer le nom du pod dans dev
-POD_NAME=$(kubectl get pods -n dev -l app=will-playground -o jsonpath="{.items[0].metadata.name}")
-
+POD_NAME=$(kubectl get pods -n dev -l app=wil-playground -o jsonpath='{.items[0].metadata.name}')
 # 1️⃣5️⃣ Lancer le port-forward sur le pod de l'app sur le port 8888
 echo "🔄 Lancement du port-forward..."
 kubectl port-forward -n dev pod/$POD_NAME 8888:8888

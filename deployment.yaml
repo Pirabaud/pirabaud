@@ -7,11 +7,11 @@ spec:
   replicas: 1  # Nombre de réplicas du pod que tu veux avoir
   selector:
     matchLabels:
-      app: wil-playground  # Sélecteur pour identifier le pod
+      app: will-playground  # Sélecteur pour identifier le pod
   template:
     metadata:
       labels:
-        app: wil-playground  # Label pour les pods créés par ce déploiement
+        app: will-playground  # Label pour les pods créés par ce déploiement
     spec:
       containers:
         - name: playground  # Nom du conteneur
