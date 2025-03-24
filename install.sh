@@ -50,11 +50,11 @@ echo "🔄 Changement du namespace vers dev..."
 kubectl config set-context --current --namespace=dev  # 🔄 Changement de namespace pour passer au namespace `dev`
 
 # 1️⃣3️⃣ Attente que le pod soit dans le statut Running avant de continuer
-echo "⏳ Attente que le pod soit Running..."
+#echo "⏳ Attente que le pod soit Running..."
 kubectl wait --for=condition=ready pod -n dev -l app=will-playground --timeout=300s
 
 # 1️⃣4️⃣ Récupérer le nom du pod dans dev
-POD_NAME=$(kubectl get pods -n dev -l app=will-playground -o jsonpath='{.items[0].metadata.name}')
+#POD_NAME=$(kubectl get pods -n dev -l app=will-playground -o jsonpath='{.items[0].metadata.name}')
 # 1️⃣5️⃣ Lancer le port-forward sur le pod de l'app sur le port 8888
 echo "🔄 Lancement du port-forward..."
-kubectl port-forward -n dev pod/$POD_NAME 8888:8888
+kubectl port-forward svc/will-playground -n dev 8888:80
