@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: will-playground  # Nom du service
-  namespace: dev  # Namespace où le service sera créé
+  name: will-playground
+  namespace: dev 
 spec:
   selector:
-    app: will-playground # Sélection des Pods avec le label "app: pod-playground"
+    app: will-playground
   ports:
     - protocol: TCP
-      port: 80  # Le port sur lequel ton Service sera exposé
-      targetPort: 8888  # Le port du conteneur auquel le trafic sera redirigé
-  type: ClusterIP  # Le type du service, ici un service interne au cluster
+      port: 80 
+      targetPort: 8888 
+  type: ClusterIP 
 

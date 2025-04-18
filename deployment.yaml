@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: will-playground  # Nom du déploiement
-  namespace: dev  # Namespace où le déploiement sera créé
+  name: will-playground
+  namespace: dev
 spec:
-  replicas: 1  # Nombre de réplicas du pod que tu veux avoir
+  replicas: 1 
   selector:
     matchLabels:
-      app: will-playground  # Sélecteur pour identifier le pod
+      app: will-playground 
   template:
     metadata:
       labels:
-        app: will-playground  # Label pour les pods créés par ce déploiement
+        app: will-playground
     spec:
       containers:
-        - name: playground  # Nom du conteneur
-          image: wil42/playground:v1 # Ton image Docker (remplace `my-image` par le nom réel de ton image)
+        - name: playground 
+          image: wil42/playground:v2 
           ports:
             - containerPort: 8888 
